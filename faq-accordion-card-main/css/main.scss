@@ -38,7 +38,7 @@ hr {
 .card-container {
   background-color: white;
   border-radius: 5%;
-  height: 70vh;
+  height: 75vh;
   width: 325px;
   display: block;
   margin: 100px auto;
@@ -53,11 +53,20 @@ hr {
     margin: 0 20px;
 
     &-question {
-      color:red;
+      color: $veryDarkBlue;
+      display: flex;
+      justify-content:space-between;
+      margin-bottom: 10px;
+
+      img {
+        width: 5%;
+        transform: scale(-1);
+      }
     }
 
     &-answer {
-      color: purple;
+      color: $darkBlue;
+      max-width: 220px;
     }
   }
 
