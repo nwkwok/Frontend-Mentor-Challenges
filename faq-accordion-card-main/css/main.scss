@@ -1,0 +1,56 @@
+//Font
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+//Primary Colors
+$darkBlue: hsl(238, 29%, 16%);
+$softRed: hsl(14, 88%, 65%);
+
+//Background gradient
+$softViolet: hsl(273, 75%, 66%);
+$softBlue: hsl(240, 73%, 65%);
+
+//Text
+$veryDarkBlue: hsl(237, 12%, 33%);
+$darkBlue: hsl(240, 6%, 50%);
+
+//Dividers
+$lightBlue: hsl(240, 5%, 91%);
+
+html, body {
+  max-width: 375px;
+  margin: 0;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, $softViolet 50%, $softBlue);
+  background-position: cover;
+  background-repeat: no-repeat;
+}
+
+.card-container {
+  background-color: white;
+  border-radius: 5%;
+  height: 70vh;
+  width: 300px;
+  display: block;
+  margin: 100px auto;
+}
+
+.image-container {
+  position: absolute;
+  top: -6px;  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+
+  &-shadow {
+    position: absolute;
+    top: 100px;
+    left: 30px;
+  }
+}
