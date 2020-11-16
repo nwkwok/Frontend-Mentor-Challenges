@@ -37,7 +37,7 @@ html, body {
 .card-container {
     background-color: white;
     position: absolute;
-    height:425px;
+    height: 425px;
     width: 375px;
     top: 50%;
     left: 50%;
@@ -118,3 +118,25 @@ hr {
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+
+@media screen and (max-width: 980px){
+    body {
+        background-position: 
+        top -650px left -500px,
+        bottom -650px right -500px;
+    }
+} 
+
+@media screen and (max-width: 650px){
+    body {
+        background-position: 
+        top -650px left -650px,
+        bottom -650px right -650px;
+    }
+} 
+
+@media screen and (max-width: 375){
+    .card-container {
+        width: 320px;
+    }
+} 
