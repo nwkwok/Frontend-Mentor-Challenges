@@ -28,8 +28,8 @@ html, body {
         url('./images//bg-pattern-top.svg'), 
         url('./images/bg-pattern-bottom.svg');
     background-position: 
-        top -500px left -150px,
-        bottom -500px right -150px;
+        top -550px left -325px,
+        bottom -650px right -300px;
     background-repeat: no-repeat;
     position: relative;
  }
@@ -115,4 +115,6 @@ hr {
     margin-right: auto;
 
 }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
