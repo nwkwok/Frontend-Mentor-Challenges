@@ -28,8 +28,8 @@ html, body {
         url('./images//bg-pattern-top.svg'), 
         url('./images/bg-pattern-bottom.svg');
     background-position: 
-        top -550px left -325px,
-        bottom -650px right -300px;
+        top -650px left -325px,
+        bottom -650px right -350px;
     background-repeat: no-repeat;
     position: relative;
  }
