@@ -37,7 +37,7 @@ html, body {
 .card-container {
     background-color: white;
     position: absolute;
-    height:375px;
+    height:425px;
     width: 375px;
     top: 50%;
     left: 50%;
@@ -63,13 +63,56 @@ html, body {
 
 .card-content-info {
     text-align: center;
-    padding-top: 70px;
+    padding-top: 75px;
 }
 
+.card-content-info-name {
+    font-weight: 700;
+    font-size: 20px;
+}
 
+.card-content-info-age {
+    font-weight: 400;
+    color:hsl(0, 0%, 59%);
+    margin-left: 5px;
+}
+
+.card-content-info-city {
+    color: hsl(0, 0%, 59%);
+    margin-top: -10px;
+}
+
+hr {
+    opacity: .25;
+    margin-top: 28px;
+}
+.card-content-social {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 50px;
+}
+
+.card-content-social-description {
+   display: inline-block;
+   text-align: center;
+}
+
+.card-content-social-type {
+    font-weight: 400;
+    font-size: 14px;
+    color: hsl(0, 0%, 59%);
+    margin-top: -10px;
+ }
 
 .attribution { 
     font-size: 11px; 
     text-align: center; 
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    margin-left: auto;
+    margin-right: auto;
+
 }
 .attribution a { color: hsl(228, 45%, 44%); }
