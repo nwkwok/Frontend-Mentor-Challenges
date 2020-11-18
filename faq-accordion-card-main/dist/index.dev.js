@@ -6,6 +6,7 @@ var arrow = document.getElementsByClassName('arrow');
 
 var _loop = function _loop(i) {
   question[i].addEventListener('click', function () {
+    question[i].classList.toggle('active');
     answer[i].classList.toggle('active');
     arrow[i].classList.toggle('active');
   });

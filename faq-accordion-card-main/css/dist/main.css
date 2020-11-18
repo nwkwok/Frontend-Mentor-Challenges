@@ -11,7 +11,7 @@ hr {
 }
 
 .background {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-image: linear-gradient(to bottom, #af67e9 50%, #6565e7);
   background-position: cover;
@@ -21,7 +21,7 @@ hr {
 .card-container {
   background-color: white;
   border-radius: 5%;
-  height: 75vh;
+  height: 600px;
   width: 325px;
   display: block;
   margin: 100px auto;
@@ -41,6 +41,9 @@ hr {
   justify-content: space-between;
   margin-bottom: 10px;
   cursor: pointer;
+}
+.card-container-content-question.active {
+  font-weight: 700;
 }
 .card-container-content-question img {
   width: 5%;
@@ -67,7 +70,7 @@ hr {
 
 .image-container {
   position: absolute;
-  top: -6px;
+  top: 10px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -86,10 +89,10 @@ hr {
 
 footer {
   position: absolute;
-  display: block;
-  margin: 0 auto;
-  bottom: 20px;
-  left: 255px;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  margin-left: 20px;
 }
 
 .footer-content {
@@ -104,7 +107,7 @@ footer {
 @media (min-width: 800px) {
   .card-container {
     width: 780px;
-    height: 60vh;
+    height: 500px;
     position: relative;
     overflow: hidden;
   }
@@ -132,9 +135,6 @@ footer {
   .card-container .image-container-shadow {
     display: none;
   }
-  .card-container .image-container-woman {
-    z-index: 100;
-  }
   .card-container-content-answer {
     max-width: 370px;
   }
@@ -143,6 +143,9 @@ footer {
   }
 
   footer {
-    left: 180px;
+    position: absolute;
+    width: 100%;
+    height: 2.5rem;
+    text-align: center;
   }
 }

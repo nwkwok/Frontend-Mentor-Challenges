@@ -4,6 +4,7 @@ const arrow = document.getElementsByClassName('arrow')
 
 for (let i = 0; i<question.length; i++) {
 question[i].addEventListener('click', () => {
+    question[i].classList.toggle('active');
     answer[i].classList.toggle('active');
     arrow[i].classList.toggle('active');
 })
