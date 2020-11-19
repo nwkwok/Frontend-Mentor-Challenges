@@ -1,18 +1,9 @@
 const { mapbox_connect, geo_api } = config;
-
 const button = document.getElementById('button');
 const search = document.querySelector('input');
 const ipInput = document.getElementById('ipInput')
 
-
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        console.log(search.value);
-        const input = search.value;
-        ipInput.innerText = input;
-    });
-
-var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+const mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
 L.tileLayer(mapbox_connect, {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -23,17 +14,42 @@ L.tileLayer(mapbox_connect, {
     accessToken: mapbox_connect
 }).addTo(mymap);
 
-var ip = "9.9.9.9";
-var api_key = geo_api;
-$(function () {
-   $.ajax({
-       url: "https://geo.ipify.org/api/v1",
-       data: {apiKey: api_key, ipAddress: ip},
-       success: function(data) {
-           $("body").append("<pre>"+ JSON.stringify(data,"",2)+"</pre>");
-       }
-   });
-});
+
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const input = search.value;
+        let ip = input;
+        var api_key = geo_api;
+        
+        $(function () {
+           $.ajax({
+               url: "https://geo.ipify.org/api/v1",
+               data: {apiKey: api_key, ipAddress: ip},
+               success: function(data) {
+                   console.log(data);
+                   const { ip, location, isp } = data
+                //    $("body").append("<pre>"+ JSON.stringify(data,"",3)+"</pre>");
+                    console.log(location.lat, location.lng)
+                $('#ipInput').html(ip);
+                $('#location').html(`
+                    ${location.city}, ${location.country} <br /> 
+                    <span style='line-height: 1.5;'>${location.postalCode} </span>`);
+                $('#time').html(`UTC ${location.timezone}`)
+                $('#isp').html(`
+                <span style='line-height: 1.5;'>${isp}</span>`); 
+
+                mymap.flyTo(new L.LatLng(location.lat, location.lng));
+
+
+               }
+           });
+        });
+
+    });
+
+
+
+
 
 
 

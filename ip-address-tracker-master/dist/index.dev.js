@@ -6,12 +6,6 @@ var _config = config,
 var button = document.getElementById('button');
 var search = document.querySelector('input');
 var ipInput = document.getElementById('ipInput');
-button.addEventListener('click', function (e) {
-  e.preventDefault();
-  console.log(search.value);
-  var input = search.value;
-  ipInput.innerText = input;
-});
 var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 L.tileLayer(mapbox_connect, {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -21,17 +15,31 @@ L.tileLayer(mapbox_connect, {
   zoomOffset: -1,
   accessToken: mapbox_connect
 }).addTo(mymap);
-var ip = "9.9.9.9";
-var api_key = geo_api;
-$(function () {
-  $.ajax({
-    url: "https://geo.ipify.org/api/v1",
-    data: {
-      apiKey: api_key,
-      ipAddress: ip
-    },
-    success: function success(data) {
-      $("body").append("<pre>" + JSON.stringify(data, "", 2) + "</pre>");
-    }
+button.addEventListener('click', function (e) {
+  e.preventDefault();
+  var input = search.value;
+  var ip = input;
+  var api_key = geo_api;
+  $(function () {
+    $.ajax({
+      url: "https://geo.ipify.org/api/v1",
+      data: {
+        apiKey: api_key,
+        ipAddress: ip
+      },
+      success: function success(data) {
+        console.log(data);
+        var ip = data.ip,
+            location = data.location,
+            isp = data.isp; //    $("body").append("<pre>"+ JSON.stringify(data,"",3)+"</pre>");
+
+        console.log(location.lat, location.lng);
+        $('#ipInput').html(ip);
+        $('#location').html("\n                    ".concat(location.city, ", ").concat(location.country, " <br /> \n                    <span style='line-height: 1.5;'>").concat(location.postalCode, " </span>"));
+        $('#time').html("UTC ".concat(location.timezone));
+        $('#isp').html("\n                <span style='line-height: 1.5;'>".concat(isp, "</span>"));
+        mymap.flyTo(new L.LatLng(location.lat, location.lng));
+      }
+    });
   });
 });
