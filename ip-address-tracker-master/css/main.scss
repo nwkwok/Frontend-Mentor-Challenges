@@ -35,27 +35,28 @@ body {
 
     .card-container {
         position: absolute;
-        height: 360px;
+        height: 315px;
         border-radius: 5px;
         left: 50%;
         top: 10%;
         transform: translateX(-50%);
-        width: 350px;
+        width: 320px;
         text-align: center;
         z-index: 2;
         
         &-content {
-            line-height: .5;
+            line-height: .1;
             background-color: white;
             border-radius: 5px;
             height: 100%;
             margin-top:5px;
-            padding-top: 2px;
+            padding-top: .5px;
                 h6 { color: $darkGray;}
                 h3 { color: $veryDarkGray }
         }
     
         &-search {
+            margin-top: -25px;
             text-align: left; 
 
             &-input {

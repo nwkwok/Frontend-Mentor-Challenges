@@ -32,22 +32,22 @@ body {
 }
 .container .card-container {
   position: absolute;
-  height: 360px;
+  height: 315px;
   border-radius: 5px;
   left: 50%;
   top: 10%;
   transform: translateX(-50%);
-  width: 350px;
+  width: 320px;
   text-align: center;
   z-index: 2;
 }
 .container .card-container-content {
-  line-height: 0.5;
+  line-height: 0.1;
   background-color: white;
   border-radius: 5px;
   height: 100%;
   margin-top: 5px;
-  padding-top: 2px;
+  padding-top: 0.5px;
 }
 .container .card-container-content h6 {
   color: #969696;
@@ -56,6 +56,7 @@ body {
   color: #2b2b2b;
 }
 .container .card-container-search {
+  margin-top: -25px;
   text-align: left;
 }
 .container .card-container-search-input {
