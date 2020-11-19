@@ -1,16 +1,16 @@
 const { mapbox_connect, geo_api } = config;
 
-// const input = document.querySelector('input');
-// const button = document.getElementById('button');
+const button = document.getElementById('button');
+const search = document.querySelector('input');
+const ipInput = document.getElementById('ipInput')
 
-// input.addEventListener('input', (e) => {
-//     const ep = e.target.value;
 
-//     button.addEventListener('click', (e) => {
-//         e.preventDefault();
-//         console.log(ep);
-//     })
-// });
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log(search.value);
+        const input = search.value;
+        ipInput.innerText = input;
+    });
 
 var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 

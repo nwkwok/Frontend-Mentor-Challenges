@@ -8,6 +8,10 @@ html, body {
     box-sizing: border-box;
 }
 
+input:focus {
+    outline: none;
+}
+
 body {
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
@@ -23,8 +27,9 @@ body {
     &-background {
         background-color: lightblue;
         width: 100%;
+        height:30%;
         height: 200px;
-        background-image: url('../images/pattern-bg.png');
+        background-image: url('../../images/pattern-bg.png');
         background-position: cover;
         text-align: center;
     }
@@ -58,8 +63,8 @@ body {
                 border: none;
                 border-radius: 5px;
                 padding: 10px;
-    
             }
+
     
             // &-button {
                 
@@ -70,7 +75,7 @@ body {
 }
 
 .map-container {
-    height: 500px;
+    height: 70%;
     width: 100%;
     z-index: -1;
 }

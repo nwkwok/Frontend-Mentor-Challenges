@@ -16,6 +16,7 @@
 
 
 
+
   <title>Frontend Mentor | IP Address Tracker</title>
 
 </head>
@@ -30,7 +31,9 @@
     <div class='card-container'>
       <div class='card-container-search'>
         <form>
-          <input autocomplete='off' class='card-container-search-input' name="ip_address" placeholder="Search for any IP address or domain"
+          <input 
+            autocomplete='off' class='card-container-search-input' name="ip_address" 
+            placeholder="Search for any IP address or domain"
             type="text">
           <button id="button" type="submit" name="button">
             <img class='card-container-search-button' src="images/icon-arrow.svg" alt="arrow-icon-button" />
@@ -39,18 +42,15 @@
       </div>
 
       <div class="card-container-content">
-
         <h6>IP Address</h6>
-        <h3>123.123.123.123</h3>
+        <h3 id='ipInput'>123.123.123.123</h3>
         <h6>Location</h6>
-        <h3>Random Location, CA</h3>
+        <h3 id='location'>Random Location, CA</h3>
         <h6>Timezone</h6>
-        <h3>UTC-05:00</h3>
+        <h3 id='time'>UTC-05:00</h3>
         <h6>Test ISP</h6>
-        <h3>Random ISP</h3>
-
+        <h3 id='isp'>Random ISP</h3>
       </div>
-
     </div>
 
     <div class='map-container'>
@@ -64,9 +64,10 @@
     Coded by <a href="https://www.nwkwok.com">Nick Kwok</a>.
   </div>
 
-
   <script src="config.js"></script>
   <script src="index.js"></script>
+
+
 </body>
 
 </html>
