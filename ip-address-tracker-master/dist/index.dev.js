@@ -2,16 +2,16 @@
 
 var _config = config,
     mapbox_connect = _config.mapbox_connect,
-    geo_api = _config.geo_api;
-var input = document.querySelector('input');
-var button = document.getElementById('button');
-input.addEventListener('input', function (e) {
-  var ep = e.target.value;
-  button.addEventListener('click', function (e) {
-    e.preventDefault();
-    console.log(ep);
-  });
-});
+    geo_api = _config.geo_api; // const input = document.querySelector('input');
+// const button = document.getElementById('button');
+// input.addEventListener('input', (e) => {
+//     const ep = e.target.value;
+//     button.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         console.log(ep);
+//     })
+// });
+
 var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 L.tileLayer(mapbox_connect, {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',

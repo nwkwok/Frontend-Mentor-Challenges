@@ -9,12 +9,66 @@ body {
   font-size: 18px;
 }
 
-#mapid {
-  height: 180px;
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container h3 {
+  color: white;
+}
+.container-background {
+  background-color: lightblue;
+  width: 100%;
+  height: 200px;
+  background-image: url("../images/pattern-bg.png");
+  background-position: cover;
+  text-align: center;
+}
+.container .card-container {
+  position: absolute;
+  height: 500px;
+  border-radius: 5px;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  width: 350px;
+  text-align: center;
+}
+.container .card-container-content {
+  line-height: 0.5;
+  background-color: white;
+  border-radius: 5px;
+  height: 350px;
+  margin-top: 5px;
+  padding-top: 2px;
+}
+.container .card-container-content h6 {
+  color: #969696;
+}
+.container .card-container-content h3 {
+  color: #2b2b2b;
+}
+.container .card-container-search {
+  text-align: left;
+}
+.container .card-container-search-input {
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
 }
 
-button {
-  background-color: black;
+.map-container {
+  height: 500px;
+  width: 100%;
+  z-index: -1;
+}
+
+#mapid {
+  height: 500px;
+  width: 100%;
 }
 
 .attribution {
