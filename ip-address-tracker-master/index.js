@@ -1,9 +1,18 @@
-const { mapbox_connect, geo_api } = config;
+const { mapbox_connect, geo } = config;
 const button = document.getElementById('button');
 const search = document.querySelector('input');
 const ipInput = document.getElementById('ipInput')
 const mymap = L.map('mapid').setView([51.505, -0.09], 13);
-const marker = L.marker([51.505,-0.09]).addTo(mymap);
+const blackMarker = L.icon({
+    iconUrl: '/images/icon-location.svg',
+    iconSize: [30, 37],
+    iconAnchor: [22, 52],
+    popupAnchor: [0, -52],
+});
+
+const marker = L.marker([51.505,-0.09], {icon: blackMarker}).addTo(mymap);
+
+
 
 L.tileLayer(mapbox_connect, {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -19,10 +28,10 @@ L.tileLayer(mapbox_connect, {
         e.preventDefault();
         const input = search.value;
         const ip = input;
-        const api_key = geo_api;
+        const api_key = geo;
         
         $(function () {
-           $.ajax({
+           $.ajax({ 
                url: "https://geo.ipify.org/api/v1",
                data: {
                    apiKey: api_key, 
@@ -30,10 +39,9 @@ L.tileLayer(mapbox_connect, {
                    domain: ip
                 },
                success: function(data) {
-                   console.log(data);
                    const { ip, location, isp } = data
 
-                    console.log(location.lat, location.lng)
+                 
                 $('#ipInput').html(ip);
                 $('#location').html(`
                     ${location.city}, ${location.country} <br /> 

@@ -132,9 +132,9 @@ button:active {
 @media (min-width: 800px) {
   .vertical-line {
     border-left: 1px solid #969696;
-    height: 50px;
+    height: 56px;
     opacity: 0.5;
-    margin-top: 20px;
+    margin-top: 26px;
   }
 
   .container .card-container {

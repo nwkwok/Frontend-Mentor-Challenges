@@ -2,12 +2,20 @@
 
 var _config = config,
     mapbox_connect = _config.mapbox_connect,
-    geo_api = _config.geo_api;
+    geo = _config.geo;
 var button = document.getElementById('button');
 var search = document.querySelector('input');
 var ipInput = document.getElementById('ipInput');
 var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-var marker = L.marker([51.505, -0.09]).addTo(mymap);
+var blackMarker = L.icon({
+  iconUrl: '/images/icon-location.svg',
+  iconSize: [30, 37],
+  iconAnchor: [22, 52],
+  popupAnchor: [0, -52]
+});
+var marker = L.marker([51.505, -0.09], {
+  icon: blackMarker
+}).addTo(mymap);
 L.tileLayer(mapbox_connect, {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
   maxZoom: 18,
@@ -20,7 +28,7 @@ button.addEventListener('click', function (e) {
   e.preventDefault();
   var input = search.value;
   var ip = input;
-  var api_key = geo_api;
+  var api_key = geo;
   $(function () {
     $.ajax({
       url: "https://geo.ipify.org/api/v1",
@@ -30,11 +38,9 @@ button.addEventListener('click', function (e) {
         domain: ip
       },
       success: function success(data) {
-        console.log(data);
         var ip = data.ip,
             location = data.location,
             isp = data.isp;
-        console.log(location.lat, location.lng);
         $('#ipInput').html(ip);
         $('#location').html("\n                    ".concat(location.city, ", ").concat(location.country, " <br /> \n                    <span style='line-height: 1.5;'>").concat(location.postalCode, " </span>"));
         $('#time').html("UTC ".concat(location.timezone));
