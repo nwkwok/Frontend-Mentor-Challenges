@@ -12,7 +12,10 @@ const blackMarker = L.icon({
 
 const marker = L.marker([51.505,-0.09], {icon: blackMarker}).addTo(mymap);
 
-
+const config = {
+    mapbox_connect: 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibndrd29rIiwiYSI6ImNraG9mNmJodTAwdmgydW56M3NkY2pkM2IifQ.BL_caXwKE6SBqpv2PFaFrw',
+    geo: 'at_PPBeNoLZOsvYSOewoAROhI9b1VRyX'
+}
 
 L.tileLayer(mapbox_connect, {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
