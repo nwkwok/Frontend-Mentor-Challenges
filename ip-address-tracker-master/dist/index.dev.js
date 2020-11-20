@@ -26,7 +26,8 @@ button.addEventListener('click', function (e) {
       url: "https://geo.ipify.org/api/v1",
       data: {
         apiKey: api_key,
-        ipAddress: ip
+        ipAddress: ip,
+        domain: ip
       },
       success: function success(data) {
         console.log(data);

@@ -24,9 +24,12 @@ L.tileLayer(mapbox_connect, {
         $(function () {
            $.ajax({
                url: "https://geo.ipify.org/api/v1",
-               data: {apiKey: api_key, ipAddress: ip},
+               data: {
+                   apiKey: api_key, 
+                   ipAddress: ip,
+                   domain: ip
+                },
                success: function(data) {
-                   
                    console.log(data);
                    const { ip, location, isp } = data
 
