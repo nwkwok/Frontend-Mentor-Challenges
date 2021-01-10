@@ -2,7 +2,7 @@ const { mapbox_connect, geo } = config;
 const button = document.getElementById('button');
 const search = document.querySelector('input');
 const ipInput = document.getElementById('ipInput')
-const mymap = L.map('mapid').setView([51.505, -0.09], 13);
+const mymap = L.map('mapid').setView([37.7749, -122.4194], 13);
 const blackMarker = L.icon({
     iconUrl: '/images/icon-location.svg',
     iconSize: [30, 37],
@@ -10,7 +10,7 @@ const blackMarker = L.icon({
     popupAnchor: [0, -52],
 });
 
-const marker = L.marker([51.505,-0.09], {icon: blackMarker}).addTo(mymap);
+const marker = L.marker([37.779, -122.4194], {icon: blackMarker}).addTo(mymap);
 
 L.tileLayer(mapbox_connect, {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
